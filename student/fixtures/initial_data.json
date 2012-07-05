@@ -1,0 +1,83 @@
+[
+ {
+  "pk": 1,
+  "model": "student.student",
+  "fields": {
+   "first_name": "Yaroslav",
+   "last_name": "Tsarevsky",
+   "middle_name": "Yuriiovic",
+   "photo": "test/Ya.jpg",
+   "group": 1,
+   "number_ticket": 80270,
+   "birth_day": "2012-06-17"
+  }
+ },
+ {
+  "pk": 2,
+  "model": "student.student",
+  "fields": {
+   "first_name": "Andrey",
+   "last_name": "Dihtyat",
+   "middle_name": "Sergeiovich",
+   "photo": "test/Pupkin.jpg",
+   "group": 1,
+   "number_ticket": 2435674,
+   "birth_day": "2012-02-04"
+  }
+ },
+ {
+  "pk": 3,
+  "model": "student.student",
+  "fields": {
+   "first_name": "Vitaliy",
+   "last_name": "Kucheriaviy",
+   "middle_name": "Alexandrovich",
+   "photo": "test/Peper.jpg",
+   "group": 2,
+   "number_ticket": 14315,
+   "birth_day": "2012-07-24"
+  }
+ },
+ {
+  "pk": 4,
+  "model": "student.student",
+  "fields": {
+   "first_name": "Aleksandr",
+   "last_name": "Bugrinov",
+   "middle_name": "Alekseevich",
+   "photo": "test/Suslik.jpeg",
+   "group": 2,
+   "number_ticket": 1241456,
+   "birth_day": "2012-07-26"
+  }
+ },
+ {
+  "pk": 5,
+  "model": "student.student",
+  "fields": {
+   "first_name": "Vasilii",
+   "last_name": "Pupkin",
+   "middle_name": "Genadevich",
+   "photo": "test/trollface_2.png",
+   "group": 1,
+   "number_ticket": 123456,
+   "birth_day": "2012-07-05"
+  }
+ },
+ {
+  "pk": 1,
+  "model": "student.group",
+  "fields": {
+   "elder": 1,
+   "group_name": "510"
+  }
+ },
+ {
+  "pk": 2,
+  "model": "student.group",
+  "fields": {
+   "elder": null,
+   "group_name": "515"
+  }
+ }
+]

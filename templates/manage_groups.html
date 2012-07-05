@@ -1,0 +1,16 @@
+{% load url from future %}
+
+<html>
+<head>
+    <table>
+        <form action="./" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <td><input type="submit" value="Save" /></td>
+        </form>
+    </table>
+</head>
+<body>
+
+</body>
+</html>

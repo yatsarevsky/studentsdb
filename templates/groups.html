@@ -1,0 +1,35 @@
+{% load url from future %}
+
+<html>
+<head>
+    <p><a href="{% url 'add_group' %}">Add group</a></p>
+    <h1 align="center">Groups List</h1>
+    <table border="1" cellspacing="0" cellpadding="10" align="center">
+        <tr>
+            <th>Group Name</th>
+            <th>Elder</th>
+            <th>Students Count</th>
+            <th>Action</th>
+        </tr>
+        {% for group in groups %}
+            <tr>
+                <td><a href="{% url 'students' group.id %}">{{ group.group_name }}</a></td>
+                <td>
+                    {% if group.elder %}
+                    {{ group.elder }}
+                    {% else %}
+                    No elder
+                    {% endif %}
+                </td>
+                <td>{{ group.students_cnt }}</td>
+                <td>
+                    <a href="{% url 'edit_group' group.id %}">edit /</a>
+                    <a href="{% url 'del_group' group.id %}">delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</head>
+<body>
+</body>
+</html>

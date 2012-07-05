@@ -1,0 +1,56 @@
+{% load thumbnail %}
+{% load url from future %}
+
+<html>
+<head>
+    <p><a href="{% url 'add_student' group.id %}">Add Student</a></p>
+    <h1 align="center">Students List of {{ group.group_name }}</h1>
+    <table border="1" cellspacing="0" cellpadding="10" align="center">
+        <tr>
+            <th>Photo</th>
+            <th>Student Name</th>
+            <th>Student Last Name</th>
+            <th>Students Middle Name</th>
+            <th>Birth Day</th>
+            <th>Number Ticket</th>
+            <th>Action</th>
+        </tr>
+        {% for student in students %}
+            <tr>
+                <td>
+                    {% thumbnail student.photo "100x100" as im %}
+                        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                    {% endthumbnail %}
+                <td>{{ student.first_name }}</td>
+                <td>{{ student.last_name }}</td>
+                <td>{{ student.middle_name }}</td>
+                <td>{{ student.birth_day }}</td>
+                <td>{{ student.number_ticket }}</td>
+                <td>
+                    <a href="{% url 'edit_student' group_id=group.id student_id=student.id %}">edit /</a>
+                    <a href="{% url 'del_student' group_id=group.id student_id=student.id %}">delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+        <div class="pagination" align="center">
+            <span class="step-links">
+                {% if students.has_previous %}
+                    <a href="?page={{ students.previous_page_number }}"><---</a>
+                {% endif %}
+
+                <span class="current">
+                    Page {{ students.number }} of {{ students.paginator.num_pages }}.
+                </span>
+
+                {% if students.has_next %}
+                    <a href="?page={{ students.next_page_number }}">---></a>
+                {% endif %}
+            </span>
+        </div>
+    </table>
+    <p align="center"><a href="{% url 'groups' %}">Back to Groups</a></p>
+</head>
+<body>
+
+</body>
+</html>
